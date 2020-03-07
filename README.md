@@ -9,10 +9,10 @@ Chronos is a boiling/cooling water system working on Raspberry Pi. Chronos has a
 ### Summary of set up ###
 #### Installation ####
 To install the latest version Chronos from Bitbucket repo enter the following command:
-`# pip install git+https://bitbucket.org/quarck/chronos.git`
+`# sudo pip install git+https://bitbucket.org/quarck/chronos.git`
 
 To install a certain version from a tag, commit or branch enter this:
-`# pip install git+https://bitbucket.org/quarck/chronos.git@commit|tag|branch`
+`# sudo pip install git+https://bitbucket.org/quarck/chronos.git@commit|tag|branch`
 #### Python packages dependencies ####
 
 * Flask
