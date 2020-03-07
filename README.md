@@ -28,6 +28,13 @@ To install a certain version from a tag, commit or branch enter this:
 
 * nginx
 
+#### Hardware dependencies ####
+
+* Raspberry Pi
+* USB to RS4485 adapter such as the GearMo Mini USB to RS485 / RS422 Converter FTDI CHIP
+* Relay array such as the Numato 16 Channel USB Relay Module https://numato.com/product/16-channel-usb-relay-module
+* Two DS18B20 temperature sensors connected to GPIO 
+
 #### Database configuration ####
 
 TODO
