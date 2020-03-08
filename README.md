@@ -30,6 +30,7 @@ To install a certain version from a tag, commit or branch enter this:
 #### System dependencies ####
 
 * nginx
+* uwsgi-plug-python
 
 #### Hardware dependencies ####
 
