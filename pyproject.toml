@@ -1,0 +1,51 @@
+[project]
+name = "chronos"
+version = "0.4.1"
+description = "Boiling/cooling water system."
+readme = "README.md"
+requires-python = ">=3.6"
+
+authors = [
+    { name = "Dmitry Misharov", email = "quarckster@gmail.com" }
+]
+
+urls = { "Homepage" = "https://bitbucket.org/quarck/chronos/" }
+
+classifiers = [
+    "Private :: Do Not Upload"
+]
+
+dependencies = [
+    "apscheduler",
+    "sqlalchemy",
+    "Flask",
+    "gunicorn",
+    "pymodbus",
+    "python-socketio",
+    "socketIO-client",
+    "gevent-websocket"
+]
+
+[project.scripts]
+chronosd = "chronos.bin.chronosd:main"
+chronos_debug = "chronos.utils.chronos_hardware_debug:main"
+
+[tool.setuptools]
+include-package-data = true
+packages = [
+    "chronos",
+    "chronos.lib",
+    "chronos.bin",
+    "chronos.utils"
+]
+
+[tool.setuptools.data-files]
+"/etc" = ["data_files/chronos_config.json"]
+"/etc/init.d" = ["data_files/chronos"]
+"/var/www" = ["data_files/chronos.wsgi"]
+"/etc/nginx/sites-enabled" = ["data_files/chronos.conf"]
+"/etc/uwsgi/apps-enabled" = ["data_files/chronos.ini", "data_files/socketio_server.ini"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
