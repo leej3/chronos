@@ -31,6 +31,11 @@ dependencies = [
 chronosd = "chronos.bin.chronosd:main"
 chronos_debug = "chronos.utils.chronos_hardware_debug:main"
 
+[project.optional-dependencies]
+dashboard = [
+    "sqlalchemy>=1.4.54",
+]
+
 [tool.setuptools]
 include-package-data = true
 packages = [
