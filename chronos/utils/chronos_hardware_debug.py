@@ -1,8 +1,8 @@
 import serial
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 from collections import OrderedDict
-from chronos.lib.config_parser import cfg
-from chronos.lib import db, Chronos, WEATHER_URL
+from chronos.config import cfg
+from chronos import db, Chronos, WEATHER_URL
 
 
 def relay_read(relay_number):
@@ -17,7 +17,7 @@ def relay_read(relay_number):
 
 
 def get_data_from_web():
-    content = urllib2.urlopen(WEATHER_URL)
+    content = urllib.request.urlopen(WEATHER_URL)
     last_line = content.readlines()[-1].split()
     wind_chill = float(last_line[12])
     temp_out = float(last_line[2])
@@ -46,16 +46,16 @@ def main():
     return_temp = Chronos._read_temperature_sensor(cfg.sensors.in_id)
     wind_chill, temp_out = get_data_from_web()
     relays_dict = {device: [relay_read(relay_number), relay_number] for device, relay_number in
-                   cfg.relay.__dict__.items()}
-    sorted_relays_dict = OrderedDict(sorted(relays_dict.items(), key=lambda t: t[0]))
-    for device, (relay_state, relay_number) in sorted_relays_dict.items():
-        print("{}: {}; relay number: {}".format(device, relay_state, relay_number))
-    for param, value in get_settings().items():
-        print("{}: {}".format(param, value))
-    print("Water out temp: {}".format(water_out_temp))
-    print("Return temp: {}".format(return_temp))
-    print("Wind Chill: {}".format(wind_chill))
-    print("Temp Out: {}".format(temp_out))
+                   list(cfg.relay.__dict__.items())}
+    sorted_relays_dict = OrderedDict(sorted(list(relays_dict.items()), key=lambda t: t[0]))
+    for device, (relay_state, relay_number) in list(sorted_relays_dict.items()):
+        print(("{}: {}; relay number: {}".format(device, relay_state, relay_number)))
+    for param, value in list(get_settings().items()):
+        print(("{}: {}".format(param, value)))
+    print(("Water out temp: {}".format(water_out_temp)))
+    print(("Return temp: {}".format(return_temp)))
+    print(("Wind Chill: {}".format(wind_chill)))
+    print(("Temp Out: {}".format(temp_out)))
 
 
 if __name__ == '__main__':

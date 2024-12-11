@@ -1,9 +1,9 @@
 import json
-from chronos.lib import db
+from . import db
 from sqlalchemy.sql import func
 from sqlalchemy import desc, or_
 from datetime import datetime, timedelta
-from chronos.lib.config_parser import cfg
+from chronos.config import cfg
 
 
 def get_chart_data():
