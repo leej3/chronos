@@ -24,7 +24,7 @@ dependencies = [
     "python-socketio",
     "socketIO-client",
     "gevent-websocket",
-    "thread>=2.0.5",
+    "thread",
 ]
 
 [project.scripts]
