@@ -1,5 +1,5 @@
 import json
-from chronos.lib import db
+from . import db
 from sqlalchemy.sql import func
 from sqlalchemy import desc, or_
 from datetime import datetime, timedelta
