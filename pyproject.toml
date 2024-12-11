@@ -3,7 +3,7 @@ name = "chronos"
 version = "0.4.1"
 description = "Boiling/cooling water system."
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.9"
 
 authors = [
     { name = "Dmitry Misharov", email = "quarckster@gmail.com" }
@@ -23,7 +23,8 @@ dependencies = [
     "pymodbus",
     "python-socketio",
     "socketIO-client",
-    "gevent-websocket"
+    "gevent-websocket",
+    "thread>=2.0.5",
 ]
 
 [project.scripts]
