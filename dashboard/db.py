@@ -1,9 +1,9 @@
 from datetime import datetime
 from contextlib import contextmanager
-from chronos.lib.config_parser import cfg
+from chronos.config import cfg
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
-from chronos.lib.root_logger import root_logger as logger
+from chronos.root_logger import root_logger as logger
 from sqlalchemy import create_engine, Column, INTEGER, REAL, BOOLEAN, DateTime
 
 engine = create_engine("sqlite:///{}".format(cfg.db.path), echo=False, connect_args={"timeout": 15})

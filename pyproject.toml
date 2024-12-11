@@ -40,7 +40,7 @@ dashboard = [
 include-package-data = true
 packages = [
     "chronos",
-    "chronos.lib",
+    "chronos",
     "chronos.bin",
     "chronos.utils"
 ]

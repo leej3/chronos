@@ -7,11 +7,11 @@ import urllib.request, urllib.error, urllib.parse
 from sqlalchemy import desc
 from sqlalchemy.sql import func
 from datetime import datetime, timedelta
-from chronos.lib.config import cfg
+from chronos.config import cfg
 from pymodbus.exceptions import ModbusException
-from chronos.lib.modbus_client import modbus_session
-from chronos.lib import db, db_queries, socketio_client
-from chronos.lib.root_logger import root_logger as logger
+from chronos.modbus_client import modbus_session
+from chronos import db, db_queries, socketio_client
+from chronos.root_logger import root_logger as logger
 from apscheduler.schedulers.background import BackgroundScheduler
 
 WEATHER_URL = "http://wx.thomaslivestock.com/downld02.txt"

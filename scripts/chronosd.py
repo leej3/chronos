@@ -2,8 +2,8 @@
 
 import sys
 import signal
-from chronos.lib.root_logger import root_logger as logger
-from chronos.lib import Chronos, WINTER, SUMMER, TO_WINTER, TO_SUMMER, ON, MANUAL_OFF
+from chronos.root_logger import root_logger as logger
+from chronos import Chronos, WINTER, SUMMER, TO_WINTER, TO_SUMMER, ON, MANUAL_OFF
 
 chronos = Chronos()
 

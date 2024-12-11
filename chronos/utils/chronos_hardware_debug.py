@@ -1,8 +1,8 @@
 import serial
 import urllib.request, urllib.error, urllib.parse
 from collections import OrderedDict
-from chronos.lib.config_parser import cfg
-from chronos.lib import db, Chronos, WEATHER_URL
+from chronos.config import cfg
+from chronos import db, Chronos, WEATHER_URL
 
 
 def relay_read(relay_number):
